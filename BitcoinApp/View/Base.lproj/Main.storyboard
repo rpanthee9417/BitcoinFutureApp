@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BitcoinApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g0F-Xi-5Ej" userLabel="TopContainer">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="269"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bitcoin.svg" translatesAutoresizingMaskIntoConstraints="NO" id="h7p-0t-6oe">
+                                        <rect key="frame" x="67" y="45" width="240" height="178"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="h7p-0t-6oe" firstAttribute="top" secondItem="g0F-Xi-5Ej" secondAttribute="top" constant="45" id="bih-xS-XM1"/>
+                                    <constraint firstAttribute="bottom" secondItem="h7p-0t-6oe" secondAttribute="bottom" constant="46" id="sVT-tW-8J9"/>
+                                    <constraint firstItem="h7p-0t-6oe" firstAttribute="leading" secondItem="g0F-Xi-5Ej" secondAttribute="leading" constant="67" id="v00-VP-eJE"/>
+                                    <constraint firstAttribute="trailing" secondItem="h7p-0t-6oe" secondAttribute="trailing" constant="68" id="v0h-Yw-nYM"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="goM-wP-vJg" userLabel=" MiddleContainer">
+                                <rect key="frame" x="0.0" y="269" width="375" height="128"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99999999.99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z4z-vI-QNP">
+                                        <rect key="frame" x="61.5" y="49" width="253.5" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="ClX-IU-Iqp"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="Exh-Bw-arP"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="6zU-hE-Gce"/>
+                                    <constraint firstItem="z4z-vI-QNP" firstAttribute="centerY" secondItem="goM-wP-vJg" secondAttribute="centerY" id="EPd-Gn-mZW"/>
+                                    <constraint firstItem="z4z-vI-QNP" firstAttribute="centerX" secondItem="goM-wP-vJg" secondAttribute="centerX" id="FkD-lf-FaG"/>
+                                    <constraint firstAttribute="width" constant="375" id="VUg-GT-wl3"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="heK-uG-hfn" userLabel="BottomContainer">
+                                <rect key="frame" x="0.0" y="397" width="375" height="270"/>
+                                <subviews>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UGm-Co-aaF">
+                                        <rect key="frame" x="0.0" y="44" width="375" height="183"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="fHJ-1J-CX8"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="wWv-CL-KUf"/>
+                                        </connections>
+                                    </pickerView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="UGm-Co-aaF" firstAttribute="top" secondItem="heK-uG-hfn" secondAttribute="top" constant="44" id="985-ba-yCf"/>
+                                    <constraint firstItem="UGm-Co-aaF" firstAttribute="leading" secondItem="heK-uG-hfn" secondAttribute="leading" id="KMC-vp-Jux"/>
+                                    <constraint firstAttribute="trailing" secondItem="UGm-Co-aaF" secondAttribute="trailing" id="YWE-bu-wWn"/>
+                                    <constraint firstAttribute="bottom" secondItem="UGm-Co-aaF" secondAttribute="bottom" constant="43" id="waT-5E-Xe9"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1764705882352941" green="0.27843137254901962" blue="0.43137254901960786" alpha="0.87157534246575341" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="heK-uG-hfn" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="35Y-Mc-cgJ"/>
+                            <constraint firstItem="goM-wP-vJg" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3j8-Kq-vZc"/>
+                            <constraint firstItem="goM-wP-vJg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="61u-dT-TxE"/>
+                            <constraint firstItem="goM-wP-vJg" firstAttribute="top" secondItem="g0F-Xi-5Ej" secondAttribute="bottom" id="DTT-db-c8K"/>
+                            <constraint firstItem="g0F-Xi-5Ej" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="FAH-oL-2XB"/>
+                            <constraint firstItem="heK-uG-hfn" firstAttribute="top" secondItem="goM-wP-vJg" secondAttribute="bottom" id="Ty3-ow-3D3"/>
+                            <constraint firstItem="heK-uG-hfn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ZpD-xE-O0n"/>
+                            <constraint firstItem="g0F-Xi-5Ej" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="e8b-6L-6dJ"/>
+                            <constraint firstItem="g0F-Xi-5Ej" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="muW-Pp-VVl"/>
+                            <constraint firstItem="heK-uG-hfn" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="wnL-Dd-Lph"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="bitcoinPriceLabel" destination="z4z-vI-QNP" id="jM8-6q-sWs"/>
+                        <outlet property="currencyPicker" destination="UGm-Co-aaF" id="D9F-nJ-ai3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="118.29085457271366"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Bitcoin.svg" width="234" height="234"/>
+    </resources>
+</document>
