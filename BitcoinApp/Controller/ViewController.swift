@@ -14,6 +14,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     let URL = "https://apiv2.bitcoinaverage.com/indices/global/ticker/BTC"
     let currencyArray = ["USD","AUD", "BRL","CAD","CNY","EUR","GBP","HKD","IDR","ILS","INR","JPY","MXN","NOK","NZD","PLN","RON","RUB","SEK","SGD","ZAR"]
+    let currencySymoblArray = ["$", "A$", "R$", "C$", "¥", "€", "£", "HK$", "Rp", "₪"," ₹", "￥", "$", "kr", "NZ$", "zł", "ROL", "₽", "kr", "S$", "c" ]
+    var currencySymbol : String!
     
     var finalUrl = ""
     
@@ -38,6 +40,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         finalUrl = URL + currencyArray[row]
+        currencySymbol = currencySymoblArray[row]
+        
         getBitcoinData(url: finalUrl)
     }
     
@@ -57,15 +61,15 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     //parse data using swiftyJSON
     func parseData(data: JSON){
         if let price = data["ask"].double{
-            updateUI(price: price)
+            updateUI(symbol:currencySymbol, price: price)
         }else{
             bitcoinPriceLabel.text = "Something Went Wrong"
         }
         
     }
     
-    func updateUI(price: Double){
-        bitcoinPriceLabel.text = "\(price)"
+    func updateUI(symbol: String, price: Double){
+        bitcoinPriceLabel.text = "\(symbol) \(price)"
     }
     
 
